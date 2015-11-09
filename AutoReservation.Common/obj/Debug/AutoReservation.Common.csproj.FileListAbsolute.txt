@@ -1,0 +1,10 @@
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\bin\Debug\AutoReservation.Common.dll.config
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\bin\Debug\AutoReservation.Common.dll
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\bin\Debug\AutoReservation.Common.pdb
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\bin\Debug\EntityFramework.dll
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\bin\Debug\EntityFramework.xml
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\obj\Debug\AutoReservation.Common.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\obj\Debug\AutoReservation.Common.dll
+C:\Users\Mario\Documents\MsTE\Miniprojekt\Vorgabe\AutoReservation.Common\obj\Debug\AutoReservation.Common.pdb
