@@ -136,6 +136,7 @@
       <DependentUpon>AutoReservationDataModel.edmx</DependentUpon>
       <LastGenOutput>AutoReservationDataModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="AutoReservationDataModel.edmx.sql" />
     <Content Include="AutoReservationDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AutoReservationDataModel.edmx</DependentUpon>
