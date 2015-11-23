@@ -80,7 +80,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AutoReservationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Auto">
+        <EntityType Name="Auto" Abstract="true">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -141,14 +141,14 @@
         </Association>
         <EntityContainer Name="AutoReservationEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Autos" EntityType="Self.Auto" />
-          <EntitySet Name="Kundes" EntityType="Self.Kunde" />
+          <EntitySet Name="Kunden" EntityType="Self.Kunde" />
           <EntitySet Name="Reservationen" EntityType="Self.Reservation" />
           <AssociationSet Name="FK_Reservation_Auto" Association="Self.FK_Reservation_Auto">
             <End Role="Auto" EntitySet="Autos" />
             <End Role="Reservation" EntitySet="Reservationen" />
           </AssociationSet>
           <AssociationSet Name="FK_Reservation_Kunde" Association="Self.FK_Reservation_Kunde">
-            <End Role="Kunde" EntitySet="Kundes" />
+            <End Role="Kunde" EntitySet="Kunden" />
             <End Role="Reservation" EntitySet="Reservationen" />
           </AssociationSet>
         </EntityContainer>
@@ -171,8 +171,27 @@
                 <ScalarProperty Name="Marke" ColumnName="Marke" />
               </MappingFragment>
             </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.LuxusklasseAuto)">
+              <MappingFragment StoreEntitySet="Auto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Basistarif" ColumnName="Basistarif" />
+                <Condition ColumnName="AutoKlasse" Value="0" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.MittelklasseAuto)">
+              <MappingFragment StoreEntitySet="Auto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <Condition ColumnName="AutoKlasse" Value="1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.StandardAuto)">
+              <MappingFragment StoreEntitySet="Auto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <Condition ColumnName="AutoKlasse" Value="2" />
+              </MappingFragment>
+            </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Kundes">
+          <EntitySetMapping Name="Kunden">
             <EntityTypeMapping TypeName="AutoReservationModel.Kunde">
               <MappingFragment StoreEntitySet="Kunde">
                 <ScalarProperty Name="Id" ColumnName="Id" />

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AutoReservationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Auto">
+  <EntityType Name="Auto" Abstract="true">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ConcurrencyMode="Fixed" />
-    <Property Name="Marke" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" ConcurrencyMode="Fixed" />
-    <Property Name="Tagestarif" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
-    <NavigationProperty Name="Reservations" Relationship="Self.FK_Reservation_Auto" FromRole="Auto" ToRole="Reservation" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marke" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tagestarif" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Reservationen" Relationship="Self.FK_Reservation_Auto" FromRole="Auto" ToRole="Reservation" />
   </EntityType>
   <EntityType Name="Kunde">
     <Key>
@@ -17,7 +17,7 @@
     <Property Name="Nachname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" ConcurrencyMode="Fixed" />
     <Property Name="Vorname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" ConcurrencyMode="Fixed" />
     <Property Name="Geburtsdatum" Type="DateTime" Nullable="false" Precision="3" ConcurrencyMode="Fixed" />
-    <NavigationProperty Name="Reservations" Relationship="Self.FK_Reservation_Kunde" FromRole="Kunde" ToRole="Reservation" />
+    <NavigationProperty Name="Reservationen" Relationship="Self.FK_Reservation_Kunde" FromRole="Kunde" ToRole="Reservation" />
   </EntityType>
   <EntityType Name="Reservation">
     <Key>
@@ -72,9 +72,9 @@
       <End Role="Reservation" EntitySet="Reservationen" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="LuxusklasseAuto" BaseType="AutoReservationModel.Auto">
-    <Property Name="Basistarif" Type="Int32" />
-  </EntityType>
   <EntityType Name="MittelklasseAuto" BaseType="AutoReservationModel.Auto" />
   <EntityType Name="StandardAuto" BaseType="AutoReservationModel.Auto" />
+  <EntityType Name="LuxusklasseAuto" BaseType="AutoReservationModel.Auto">
+    <Property Name="Basistarif" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>
