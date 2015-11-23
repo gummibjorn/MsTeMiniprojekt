@@ -5,22 +5,22 @@ namespace AutoReservation.Common.Interfaces
 {
     public interface IAutoReservationService
     {
-        List<AutoDto> allAutos();
-        AutoDto getAuto(int id);
-        AutoDto insertAuto(AutoDto newAuto);
-        AutoDto updateAuto(AutoDto modified, AutoDto original);
-        AutoDto deleteAuto(AutoDto toDeleteAuto);
+        List<AutoDto> AllAutos();
+        AutoDto GetAuto(int id);
+        void InsertAuto(AutoDto newAuto);
+        void UpdateAuto(AutoDto modified, AutoDto original);
+        void DeleteAuto(AutoDto toDeleteAuto);
 
-        List<ReservationDto> allReservations();
-        ReservationDto getReservation(int id);
-        ReservationDto insertReservation(ReservationDto newReservation);
-        ReservationDto updateReservation(ReservationDto modified, ReservationDto original);
+        List<ReservationDto> AllReservations();
+        ReservationDto GetReservation(int id);
+        void InsertReservation(ReservationDto newReservation);
+        void UpdateReservation(ReservationDto modified, ReservationDto original);
+        void DeleteReservation(ReservationDto toDeleteReservation);
 
-        List<ReservationDto> allKunden();
-        KundeDto getKunde(int id);
-        KundeDto insertKunde(KundeDto newReservation);
-        KundeDto updateKunde(KundeDto modified, KundeDto original);
-
-
+        List<ReservationDto> AllKunden();
+        KundeDto GetKunde(int id);
+        void InsertKunde(KundeDto newReservation);
+        void UpdateKunde(KundeDto modified, KundeDto original);
+        void DeleteKunde(KundeDto toDeleteKunde);
     }
 }

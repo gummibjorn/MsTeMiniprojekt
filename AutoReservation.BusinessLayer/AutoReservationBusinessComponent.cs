@@ -9,7 +9,7 @@ namespace AutoReservation.BusinessLayer
     {
 
         #region Auto
-        public List<Auto> allAutos()
+        public List<Auto> AllAutos()
         {
             using (var context = new AutoReservationEntities())
             {
@@ -17,7 +17,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public Auto getAuto(int id)
+        public Auto GetAuto(int id)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -25,7 +25,23 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void updateAuto(Auto modified, Auto original)
+        public void InsertAuto(Auto newAuto)
+        {
+            using (var context = new AutoReservationEntities())
+            {
+                try
+                {
+                    context.Autos.Add(newAuto);
+                    context.SaveChanges();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    HandleDbConcurrencyException(context, newAuto);
+                }
+            }
+        }
+
+        public void UpdateAuto(Auto modified, Auto original)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -42,7 +58,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void deleteAuto(Auto toDeleteAuto)
+        public void DeleteAuto(Auto toDeleteAuto)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -62,7 +78,7 @@ namespace AutoReservation.BusinessLayer
         #endregion
 
         #region Reservationen
-        public List<Reservation> allReservations()
+        public List<Reservation> AllReservations()
         {
             using (var context = new AutoReservationEntities())
             {
@@ -70,7 +86,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public Reservation getReservation(int reservationNr)
+        public Reservation GetReservation(int reservationNr)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -78,7 +94,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void insertReservation(Reservation newReservation)
+        public void InsertReservation(Reservation newReservation)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -93,7 +109,7 @@ namespace AutoReservation.BusinessLayer
                 }
             }
         }
-        public void updateReservation(Reservation modified, Reservation original)
+        public void UpdateReservation(Reservation modified, Reservation original)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -110,7 +126,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void deleteReservation(Reservation toDeleteReservation)
+        public void DeleteReservation(Reservation toDeleteReservation)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -130,7 +146,7 @@ namespace AutoReservation.BusinessLayer
         #endregion
 
         #region Kunde
-        public List<Reservation> allKunden()
+        public List<Reservation> AllKunden()
         {
             using (var context = new AutoReservationEntities())
             {
@@ -138,7 +154,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public Kunde getKunde(int id)
+        public Kunde GetKunde(int id)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -146,7 +162,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void insertKunde(Kunde newKunde)
+        public void InsertKunde(Kunde newKunde)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -161,7 +177,7 @@ namespace AutoReservation.BusinessLayer
                 }
             }
         }
-        public void updateKunden(Kunde modified, Kunde original)
+        public void UpdateKunden(Kunde modified, Kunde original)
         {
             using (var context = new AutoReservationEntities())
             {
@@ -178,7 +194,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void deleteKunden(Kunde toDeleteKunde)
+        public void DeleteKunden(Kunde toDeleteKunde)
         {
             using (var context = new AutoReservationEntities())
             {
