@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f4c495375c164e288fcd5eeac12ef7db" Name="Diagram1">
+      <Diagram DiagramId="deb1dc6a57f5431b85b43428d9e0c162" Name="Diagram1">
         <EntityTypeShape EntityType="AutoReservationModel.Auto" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="AutoReservationModel.Kunde" Width="1.5" PointX="6.375" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoReservationModel.Kunde" Width="1.5" PointX="6.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AutoReservationModel.Reservation" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="AutoReservationModel.FK_Reservation_Auto" ManuallyRouted="false" />
         <AssociationConnector Association="AutoReservationModel.FK_Reservation_Kunde" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="AutoReservationModel.LuxusklasseAuto" Width="1.5" PointX="0.75" PointY="6.625" />
-        <InheritanceConnector EntityType="AutoReservationModel.LuxusklasseAuto" />
-        <EntityTypeShape EntityType="AutoReservationModel.MittelklasseAuto" Width="1.5" PointX="3.125" PointY="6.75" />
+        <EntityTypeShape EntityType="AutoReservationModel.MittelklasseAuto" Width="1.5" PointX="3" PointY="7.125" />
         <InheritanceConnector EntityType="AutoReservationModel.MittelklasseAuto" />
-        <EntityTypeShape EntityType="AutoReservationModel.StandardAuto" Width="1.5" PointX="5.75" PointY="6.625" />
+        <EntityTypeShape EntityType="AutoReservationModel.StandardAuto" Width="1.5" PointX="6.25" PointY="7.125" />
         <InheritanceConnector EntityType="AutoReservationModel.StandardAuto" />
+        <EntityTypeShape EntityType="AutoReservationModel.LuxusklasseAuto" Width="1.5" PointX="0.625" PointY="6.875" />
+        <InheritanceConnector EntityType="AutoReservationModel.LuxusklasseAuto" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

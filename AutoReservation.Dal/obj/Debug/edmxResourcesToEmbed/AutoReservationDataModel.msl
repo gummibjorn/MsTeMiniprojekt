@@ -1,20 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AutoReservationModelStoreContainer" CdmEntityContainer="AutoReservationEntities">
-    <EntitySetMapping Name="Auto">
-      <EntityTypeMapping TypeName="AutoReservationModel.Auto">
-        <MappingFragment StoreEntitySet="Auto">
+    <EntitySetMapping Name="Autos">
+      <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.Auto)">
+        <MappingFragment StoreEntitySet="Autos">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Marke" ColumnName="Marke" />
-          <ScalarProperty Name="AutoKlasse" ColumnName="AutoKlasse" />
           <ScalarProperty Name="Tagestarif" ColumnName="Tagestarif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.LuxusklasseAuto)">
+        <MappingFragment StoreEntitySet="Autos_LuxusklasseAuto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Basistarif" ColumnName="Basistarif" />
         </MappingFragment>
       </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.MittelklasseAuto)">
+        <MappingFragment StoreEntitySet="Autos_MittelklasseAuto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.StandardAuto)">
+        <MappingFragment StoreEntitySet="Autos_StandardAuto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Kunde">
-      <EntityTypeMapping TypeName="AutoReservationModel.Kunde">
-        <MappingFragment StoreEntitySet="Kunde">
+    <EntitySetMapping Name="Kunden">
+      <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.Kunde)">
+        <MappingFragment StoreEntitySet="Kunden">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nachname" ColumnName="Nachname" />
           <ScalarProperty Name="Vorname" ColumnName="Vorname" />
@@ -22,10 +36,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Reservation">
-      <EntityTypeMapping TypeName="AutoReservationModel.Reservation">
-        <MappingFragment StoreEntitySet="Reservation">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+    <EntitySetMapping Name="Reservationen">
+      <EntityTypeMapping TypeName="IsTypeOf(AutoReservationModel.Reservation)">
+        <MappingFragment StoreEntitySet="Reservationen">
+          <ScalarProperty Name="ReservationNr" ColumnName="ReservationNr" />
           <ScalarProperty Name="AutoId" ColumnName="AutoId" />
           <ScalarProperty Name="KundeId" ColumnName="KundeId" />
           <ScalarProperty Name="Von" ColumnName="Von" />
