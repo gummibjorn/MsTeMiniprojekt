@@ -123,8 +123,5 @@ namespace AutoReservation.Common.DataTransferObjects
                 Basistarif,
                 AutoKlasse);
         }
-        
-        public Auto Covert
-
     }
 }
