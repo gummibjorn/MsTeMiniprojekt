@@ -12,7 +12,7 @@ namespace AutoReservation.Common.DataTransferObjects
         public DateTime Von
         {
             get { return von; }
-            private set
+            set
             {
                 if (von == value) { return; }
                 von = value;
@@ -24,7 +24,7 @@ namespace AutoReservation.Common.DataTransferObjects
         public DateTime Bis
         {
             get { return bis; }
-            private set
+            set
             {
                 if (bis == value) { return; }
                 bis = value;
@@ -36,7 +36,7 @@ namespace AutoReservation.Common.DataTransferObjects
         public AutoDto Auto
         {
             get { return auto; }
-            private set
+            set
             {
                 if (auto == value) { return; }
                 auto = value;
@@ -48,7 +48,7 @@ namespace AutoReservation.Common.DataTransferObjects
         public KundeDto Kunde
         {
             get { return kunde; }
-            private set
+            set
             {
                 if (kunde == value) { return; }
                 kunde = value;
@@ -60,7 +60,7 @@ namespace AutoReservation.Common.DataTransferObjects
         public int ReservationNr
         {
             get { return reseravtionNr; }
-            private set
+            set
             {
                 if (reseravtionNr == value) { return; }
                 reseravtionNr = value;
