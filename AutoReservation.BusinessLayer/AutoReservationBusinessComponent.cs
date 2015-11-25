@@ -1,6 +1,7 @@
 ﻿using AutoReservation.Dal;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 using System.Linq;
 
 namespace AutoReservation.BusinessLayer
@@ -82,7 +83,8 @@ namespace AutoReservation.BusinessLayer
         {
             using (var context = new AutoReservationEntities())
             {
-                return context.Reservationen.AsNoTracking().ToList();
+                return context.Reservationen.Include(r => r.Kunde).Include(r => r.Auto).ToList();
+                
             }
         }
 
@@ -90,7 +92,7 @@ namespace AutoReservation.BusinessLayer
         {
             using (var context = new AutoReservationEntities())
             {
-                return context.Reservationen.AsNoTracking().SingleOrDefault(i => i.ReservationNr == reservationNr);
+                return context.Reservationen.Include(r => r.Kunde).Include(r => r.Auto).SingleOrDefault(i => i.ReservationNr == reservationNr);
             }
         }
 
@@ -146,11 +148,11 @@ namespace AutoReservation.BusinessLayer
         #endregion
 
         #region Kunde
-        public List<Reservation> AllKunden()
+        public List<Kunde> AllKunden()
         {
             using (var context = new AutoReservationEntities())
             {
-                return context.Reservationen.AsNoTracking().ToList();
+                return context.Kunden.AsNoTracking().ToList();
             }
         }
 

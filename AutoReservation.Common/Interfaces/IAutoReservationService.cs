@@ -38,7 +38,7 @@ namespace AutoReservation.Common.Interfaces
         void DeleteReservation(ReservationDto toDeleteReservation);
 
         [OperationContract]
-        List<ReservationDto> AllKunden();
+        List<KundeDto> AllKunden();
 
         [OperationContract]
         KundeDto GetKunde(int id);

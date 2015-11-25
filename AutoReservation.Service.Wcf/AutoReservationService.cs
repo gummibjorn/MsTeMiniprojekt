@@ -9,7 +9,6 @@ namespace AutoReservation.Service.Wcf
 {
     public class AutoReservationService : IAutoReservationService
     {
-
         private AutoReservationBusinessComponent businessComponent;
 
         public AutoReservationService()
@@ -28,7 +27,7 @@ namespace AutoReservation.Service.Wcf
             return businessComponent.AllAutos().ConvertToDtos();
         }
 
-        public List<ReservationDto> AllKunden()
+        public List<KundeDto> AllKunden()
         {
             WriteActualMethod();
             return businessComponent.AllKunden().ConvertToDtos();
