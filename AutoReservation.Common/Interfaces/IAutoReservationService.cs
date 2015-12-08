@@ -17,6 +17,7 @@ namespace AutoReservation.Common.Interfaces
         void InsertAuto(AutoDto newAuto);
 
         [OperationContract]
+        [FaultContract(typeof(AutoDto))]
         void UpdateAuto(AutoDto modified, AutoDto original);
 
         [OperationContract]
@@ -32,6 +33,7 @@ namespace AutoReservation.Common.Interfaces
         void InsertReservation(ReservationDto newReservation);
 
         [OperationContract]
+        [FaultContract(typeof(ReservationDto))]
         void UpdateReservation(ReservationDto modified, ReservationDto original);
 
         [OperationContract]
@@ -47,6 +49,7 @@ namespace AutoReservation.Common.Interfaces
         void InsertKunde(KundeDto newReservation);
 
         [OperationContract]
+        [FaultContract(typeof(KundeDto))]
         void UpdateKunde(KundeDto modified, KundeDto original);
 
         [OperationContract]

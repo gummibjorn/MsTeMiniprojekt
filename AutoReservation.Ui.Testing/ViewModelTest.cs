@@ -19,14 +19,16 @@ namespace AutoReservation.Ui.Testing
 
             TestEnvironmentHelper.InitializeTestData();
         }
-        
+
         [TestMethod]
         public void Test_AutosLoad()
         {
             AutoViewModel vm = new AutoViewModel(kernel.Get<IServiceFactory>());
             vm.Init();
 
-            Assert.Inconclusive("Test not implemented.");
+            Assert.IsTrue(vm.LoadCommand.CanExecute(null));
+            vm.LoadCommand.Execute(null);
+            Assert.AreEqual(3, vm.Autos.Count);
         }
 
         [TestMethod]
@@ -35,7 +37,9 @@ namespace AutoReservation.Ui.Testing
             KundeViewModel vm = new KundeViewModel(kernel.Get<IServiceFactory>());
             vm.Init();
 
-            Assert.Inconclusive("Test not implemented.");
+            Assert.IsTrue(vm.LoadCommand.CanExecute(null));
+            vm.LoadCommand.Execute(null);
+            Assert.AreEqual(4, vm.Kunden.Count);
         }
 
         [TestMethod]
@@ -44,7 +48,9 @@ namespace AutoReservation.Ui.Testing
             ReservationViewModel vm = new ReservationViewModel(kernel.Get<IServiceFactory>());
             vm.Init();
 
-            Assert.Inconclusive("Test not implemented.");
+            Assert.IsTrue(vm.LoadCommand.CanExecute(null));
+            vm.LoadCommand.Execute(null);
+            Assert.AreEqual(3, vm.Reservationen.Count);
         }
     }
 }

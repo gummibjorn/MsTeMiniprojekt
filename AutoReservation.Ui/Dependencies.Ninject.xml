@@ -4,13 +4,13 @@
         to="AutoReservation.Ui.Factory.NullServiceFactory, AutoReservation.Ui"
         scope="singleton"/> -->
 
-  <!-- bind service="AutoReservation.Ui.Factory.IServiceFactory, AutoReservation.Ui"
-          to="AutoReservation.Ui.Factory.LocalDataAccessServiceFactory, AutoReservation.Ui"
-          scope="singleton"/> -->
-
   <bind service="AutoReservation.Ui.Factory.IServiceFactory, AutoReservation.Ui"
+          to="AutoReservation.Ui.Factory.LocalDataAccessServiceFactory, AutoReservation.Ui"
+          scope="singleton"/> 
+
+  <!--<bind service="AutoReservation.Ui.Factory.IServiceFactory, AutoReservation.Ui"
           to="AutoReservation.Ui.Factory.RemoteDataAccessServiceFactory, AutoReservation.Ui"
-          scope="singleton"/>
+          scope="singleton"/> -->
 
 
 

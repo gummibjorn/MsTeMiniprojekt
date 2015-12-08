@@ -73,7 +73,6 @@ namespace AutoReservation.BusinessLayer
                 {
                     HandleDbConcurrencyException(context, toDeleteAuto);
                 }
-
             }
         }
         #endregion
